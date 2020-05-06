@@ -65,7 +65,7 @@ class BaicellsRTSHandler(BasicEnodebAcsStateMachine):
             'end_session': EndSessionState(self),
             'reboot': BaicellsSendRebootState(self, when_done='wait_reboot'),
             'wait_reboot': WaitRebootResponseState(self, when_done='wait_post_reboot_inform'),
-            'wait_post_reboot_inform': WaitInformMRebootState(self, when_done='wait_empty_post_reboot', when_timeout='wait_inform_post_reboot'),
+            'wait_post_reboot_inform': WaitInformMRebootState(self, when_done='wait_inform_post_reboot', when_timeout='wait_inform_post_reboot'),
             'wait_inform_post_reboot': WaitInformState(self, when_done='wait_empty_post_reboot', when_boot=None),
             'wait_empty_post_reboot': WaitEmptyMessageState(self, when_done='get_transient_params', when_missing='check_optional_params'),
             # The states below are entered when an unexpected message type is

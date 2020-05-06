@@ -63,6 +63,8 @@ def get_device_name(
             return EnodebDeviceName.BAICELLS_RTS
         elif sw_version.startswith('BaiBS_RTSH_'):
             return EnodebDeviceName.BAICELLS_RTS
+        elif sw_version.startswith('BaiBS_RTL_'):
+            return EnodebDeviceName.BAICELLS_RTS
         else:
             raise UnrecognizedEnodebError("Device %s unsupported: Software (%s)"
                                          % (device_oui, sw_version))
