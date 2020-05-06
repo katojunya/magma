@@ -31,8 +31,8 @@ First, copy the root CA for your Orchestrator deployment into your AGW:
 HOST$ scp rootCA.pem magma@10.0.2.1:~
 HOST$ ssh magma@10.0.2.1
 
-AGW$ sudo mkdir -p /var/opt/magma/tmp/certs/
-AGW$ sudo mv rootCA.pem /var/opt/magma/tmp/certs/rootCA.pem
+AGW$ sudo mkdir -p /var/opt/magma/certs/
+AGW$ sudo mv rootCA.pem /var/opt/magma/certs/rootCA.pem
 ```
 
 Then, point your AGW to your Orchestrator:
@@ -51,7 +51,7 @@ cloud_port: 443
 bootstrap_address: bootstrapper-controller.yourdomain.com
 bootstrap_port: 443
 
-rootca_cert: /var/opt/magma/tmp/certs/rootCA.pem
+rootca_cert: /var/opt/magma/certs/rootCA.pem
 ```
 
 Then restart your services to pick up the config changes:
